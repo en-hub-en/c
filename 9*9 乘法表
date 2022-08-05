@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main(){
+    int i;
+    for (int i = 1; i<=9; i++)
+    {
+       for (int j = 1; j<=i; j++)
+       {
+        printf("%d*%d=%-3d",i,j,i*j);
+       }
+       printf("\n");
+    }
+    return 0;
+}
+
+//求数组中的最大值
+#include<stdio.h>
+int main(){
+    int arr[]={-1,-2,-3,-4,-5,-6,-7,-8,-9,-18};
+    int max=arr[0];//应该把数组的第一个字赋值给max，因为可能max的初始值是数组的最大值
+    int sz=sizeof(arr)/sizeof(arr[0]);//求出数组的长度
+    for (int i = 1; i < sz; i++)
+    {
+        if (arr[i]>max)
+        {
+            max=arr[i];
+        }
+        
+    }
+    
+    printf("%d",max);
+}
