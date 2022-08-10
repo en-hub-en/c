@@ -1,0 +1,55 @@
+#include<stdio.h>
+int count_bit_one(int n){
+    int count=0;
+   /*
+   1.  
+   while(n)
+    {
+        if (n%2==1)
+        {
+            count++;
+        }
+        n=n/2;
+    }
+    return count; */
+    /* 
+    2.
+    for (int i = 0; i < 32; i++)
+    {
+        if (((n>>i)&1)==1)
+    {
+        count++;
+    }
+    }
+     return count;
+     */
+    while (n)
+    {
+        n=n&(n-1);
+        count++;
+    }
+    return count;
+}
+int main(){
+    int a=-1;
+    //00000000000000000000000000001101
+    //13%2=1 13/2=6 
+    int count =count_bit_one(a);
+    printf("%d",count);
+    return 0;
+}
+/* 
+13
+1101 n
+1100 n-1
+n&(n-1):
+1100 n
+1011 n-1
+n&(n-1):
+1000 n
+0111 n-1
+n&(n-1):
+0000
+
+
+ */
