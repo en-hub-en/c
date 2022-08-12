@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+    int n=9;
+    float *pFloat=(float*)&n;
+    printf("n的值为:%d\n",n);//9
+    printf("*pFloat的值为:%f\n",*pFloat);//0.000000
+
+    *pFloat=9.0;
+    printf("num的值为:%d\n",n);//1091567616
+    printf("*pFloat的值为:%f\n",*pFloat);//9.000000
+    return 0;
+    /*解释原因：
+    浮点类型的数在内存中的存储方式和整型的不一样
+    9:0 00000000 00000000000000000001001
+    1001.0->(-1)^1*1.001*2^3
+     */
+}
